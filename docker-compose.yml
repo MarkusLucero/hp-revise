@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  mongodb:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+      - "28017:28017"
+  
+  mongo_provision:
+    build: ./provision
+    links:
+      - mongodb
